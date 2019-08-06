@@ -28,7 +28,7 @@ $.fn.wpPosts = function(options) {
 		number: 10
 	};
 	options = Object.assign(init, options);
-	let getUrl = (options.category) ? options.url + 'wp-json/wp/v2/posts/?_embed&per_page=' + options.number + '&filter=' + options.category : options.url + 'wp-json/wp/v2/posts/?_embed';
+	let getUrl = (options.category) ? options.url + 'wp-json/wp/v2/posts/?_embed&per_page=' + options.number + '&categories=' + options.category : options.url + 'wp-json/wp/v2/posts/?_embed';
 	// 記事の取得
 	$.get(getUrl, (posts) => {
 		let template = $(this).clone(true); // テンプレート
